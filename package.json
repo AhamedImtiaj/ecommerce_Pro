@@ -1,0 +1,14 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^4.0.0",
+        "axios": "^1.1.2",
+        "laravel-vite-plugin": "^0.7.2",
+        "rollup-plugin-copy": "^3.4.0",
+        "vite": "^4.0.0"
+    }
+}
