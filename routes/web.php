@@ -1,23 +1,30 @@
 <?php
-
 use App\Http\Controllers\Admin\LoginController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Site\CategoryController;
+use App\Http\Controllers\Site\ProductController;
+use App\Http\Controllers\Site\CartController;
+use App\Http\Controllers\Site\CheckoutController;
+use App\Http\Controllers\Site\AccountController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+// Route::view('/', 'site.pages.homepage');
+// Route::get('/category/{slug}', [CategoryController::class, 'show'])->name('category.show');
+// Route::get('/product/{slug}', [ProductController::class, 'show'])->name('product.show');
 
-Route::get('/', function () {
-    return view('admin.dashboard.index');
-});
+// Route::post('/product/add/cart', [ProductController::class, 'addToCart'])->name('product.add.cart');
+// Route::get('/cart', [CartController::class, 'getCart'])->name('checkout.cart');
+// Route::get('/cart/item/{id}/remove', [CartController::class, 'removeItem'])->name('checkout.cart.remove');
+// Route::get('/cart/clear', [CartController::class, 'clearCart'])->name('checkout.cart.clear');
 
-// Route::view('/admin', 'admin.dashboard.index');
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/checkout', [CheckoutController::class, 'getCheckout'])->name('checkout.index');
+//     Route::post('/checkout/order', [CheckoutController::class, 'placeOrder'])->name('checkout.place.order');
 
-// Route::get('/admin/login', LoginController::class,'login')->name('admin.login.post');
+//     Route::get('checkout/payment/complete', [CheckoutController::class, 'complete'])->name('checkout.payment.complete');
+
+//     Route::get('account/orders', [AccountController::class, 'getOrders'])->name('account.orders');
+// });
+
+// Auth::routes();
+require 'admin.php';
