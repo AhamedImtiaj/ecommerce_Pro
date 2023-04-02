@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\SettingController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function () {
+    Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+
     Route::get('login', [LoginController::class, 'showLoginForm'])->name('admin.login');
     Route::post('login', LoginController::class)->name('admin.login.submit');
     Route::get('logout', [LoginController::class, 'logout'])->name('admin.logout');
